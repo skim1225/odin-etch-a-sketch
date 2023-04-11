@@ -3,13 +3,18 @@
   window.addEventListener("load", init);
   
   function init() {
-    populateContainer();
+    qs('button').addEventListener('click', promptUser);
   }
 
-  function populateContainer() {
+  function promptUser() {
+    let size = prompt("Enter a size for the grid (must be less than 100): ")
+    populateContainer(size);
+  }
+
+  function populateContainer(size) {
     let container = id('container');
-    for (let i = 0; i < 16; i++) {
-        for (let j = 0; j < 16; j++) {
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
             let newDiv = gen('div');
             newDiv.addEventListener('mouseover', e => e.target.classList.add('colored'));
             container.appendChild(newDiv);
