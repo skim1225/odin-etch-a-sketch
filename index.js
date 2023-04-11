@@ -11,6 +11,7 @@
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
             let newDiv = gen('div');
+            newDiv.addEventListener('mouseover', e => e.target.classList.add('colored'));
             container.appendChild(newDiv);
         }
     }
