@@ -17,6 +17,8 @@
         for (let j = 0; j < size; j++) {
             let newDiv = gen('div');
             newDiv.addEventListener('mouseover', e => e.target.classList.add('colored'));
+            newDiv.style.height = 960/size - 2 + "px";
+            newDiv.style.width = 960/size - 2 + "px";
             container.appendChild(newDiv);
         }
     }
